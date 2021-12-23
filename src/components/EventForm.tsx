@@ -20,16 +20,16 @@ export const EventForm: FC<EventFormProps> = (props) => {
         guest: ''
     } as IEvent)
 
-    const { user } = useTapedSelector(state => state.auth)
+    const {user} = useTapedSelector(state => state.auth)
 
     const selectDate = (date: Moment | null) => {
         if (date) {
-    setEvent({...event, date: formatDate(date.toDate())})
+            setEvent({...event, date: formatDate(date.toDate())})
         }
     }
 
     const submitForm = () => {
-props.submit({...event, author: user.username})
+        props.submit({...event, author: user.username})
     }
 
     return (
